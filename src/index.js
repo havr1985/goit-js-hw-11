@@ -19,7 +19,7 @@ async function creatPhotos(q) {
         const photos = await fetchPhoto(q);
 
         if (!(photos.hits.length)) {
-            Notify.failure('Не коректний запит.Спробуй ще!');
+            Notify.failure('Sorry, there are no images matching your search query. Please try again.');
             return;
         }
         console.log(photos.hits)
