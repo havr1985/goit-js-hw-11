@@ -27,7 +27,7 @@ function onSubmit(event) {
     loadPhotos(search);
 }
 
-// function onLoad(entries, observer) {
+// function onLoad(entnpm startries, observer) {
 //   entries.forEach(async (entry) => {
 //     if (entry.isIntersecting)
 //       currentPage += 1;
