@@ -14,12 +14,11 @@ form.addEventListener('submit', onSubmit);
 
 let options = {
   root: null,
-  rootMargin: "300px",
+  rootMargin: "200px",
   threshold: 1.0,
 };
 
 
-// let observer = new IntersectionObserver(onLoad, options);
 function onSubmit(event) {
     event.preventDefault();
     gallery.innerHTML = '';
@@ -27,31 +26,26 @@ function onSubmit(event) {
     loadPhotos(search);
 }
 
-// function onLoad(entnpm startries, observer) {
-//   entries.forEach(async (entry) => {
-//     if (entry.isIntersecting)
-//       currentPage += 1;
-//     loadPhotos(q, currentPage);
-//   }
-//   )}
+let observer = new IntersectionObserver(onLoad, options);
+function onLoad(entries, observer) {
+  
+  }
 
-
-
-
-
-   async function loadPhotos(q, page){   
+   async function loadPhotos(q){   
       try {
-      
-        const photos = await fetchPhoto(q);
+        const photos = await fetchPhoto(q, currentPage);
 
         if (!(photos.hits.length)) {
             Notify.failure('Sorry, there are no images matching your search query. Please try again.');
             return;
         }
-      console.log(photos.hits)
+        console.log(photos);
+        
+        
       
-      gallery.insertAdjacentHTML('beforeend', markUp(photos.hits))
-      
+        gallery.insertAdjacentHTML('beforeend', markUp(photos.hits))
+        
+      observer.observe(target);
     } catch (error) {
         console.log(error);
     }
@@ -76,5 +70,7 @@ function markUp(photos) {
   </div>
 </div></a>`).join(' ');
 }
+
+
 
 
