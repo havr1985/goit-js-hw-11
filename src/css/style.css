@@ -1,3 +1,7 @@
+body{
+    background-color: rgb(249, 231, 74);
+}
+
 .gallery{
     justify-content: center;
     display: flex;
@@ -7,6 +11,57 @@
 
 img{
     display: block;
-    width: 500px;
-    height: 300px;
+    width: 400px;
+    height: 250px;
+    border-radius: 5px;
+}
+
+a{
+    text-decoration: none;
+}
+
+
+.container{
+    background-color: blue;
+    margin-bottom: 15px;
+    
+}
+
+.search-form{
+    display: block;
+    text-align: center;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.info{
+    display: flex;
+    justify-content: space-around;
+    border: 1px solid blue;
+    border-radius: 5px;
+    padding-top: 5px;
+}
+
+input{
+    height: 30px;
+    width: 25%;
+    border-radius: 5px;
+    outline: none;
+    background-color: rgb(249, 231, 74);
+    color: blue;
+    font-size: medium;
+}
+
+button {
+    border-radius: 5px;
+    height: 35px;
+    cursor: pointer;
+    background-color: rgb(249, 231, 74);
+    color: blue;
+
+}
+
+.info-item{
+    display: block;
+    text-align: center;
 }

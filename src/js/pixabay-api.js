@@ -8,7 +8,7 @@ export class API {
   per_page = 40;
 
   async fetchPhoto() {
-    const response = await axios.get(`${this.URL}?key=${this.KEY}&q=${this.q}&image_type=photo&orientation=horizontal&safesearch=true&${this.page}&${this.per_page}`);
+    const response = await axios.get(`${this.URL}?key=${this.KEY}&q=${this.q}&image_type=photo&orientation=horizontal&safesearch=true&page=${this.page}&per_page=${this.per_page}`);
     const data = response.data;
     return data;
   } 
